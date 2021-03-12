@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="agenda.xsd">
+    <contacto>
+        <nombre>Manuel</nombre>
+        <apellido>Rodríguez</apellido>
+        <telefono>601124050</telefono>
+        <genero>Masculino</genero>
+        <edad>18</edad>
+        <email>a20robama@iesgrancapitan.org</email>
+    </contacto>
+</agenda>

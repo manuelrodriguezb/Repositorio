@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="base-telefono">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="[0-9]{9}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="base-apellido">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30 "/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="email">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="nombre">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="10 "/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:element name="genero">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Masculino"/>
+                <xs:enumeration value="Femenino"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:element name="edad">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                <xs:minInclusive value="1"/>
+                <xs:maxInclusive value="120"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:attribute name="tipo-telefono">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="fijo" />
+                <xs:enumeration value="movil" />
+                <xs:enumeration value="empresa" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="tipo-apellido">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="primer" />
+                <xs:enumeration value="segundo" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="telefono">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="base-telefono" >
+                    <xs:attribute ref="tipo-telefono" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="apellido">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="base-apellido">
+                    <xs:attribute ref="tipo-apellido" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="contacto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="nombre"/>
+                <xs:element ref="apellido" minOccurs="1" maxOccurs="2"/>
+                <xs:element ref="telefono" minOccurs="1" maxOccurs="3"/>
+                <xs:element ref="genero" maxOccurs="1"/>
+                <xs:element ref="edad" maxOccurs="1"/>
+                <xs:element ref="email" minOccurs="1" maxOccurs="3"/>
+            </xs:sequence>
+        </xs:complexType>    
+    </xs:element>
+
+    <xs:element name="agenda">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="contacto" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
