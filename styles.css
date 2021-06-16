@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica;
+}
+
+h1{
+    color: white;
+    background-color: #2a2f48;;
+    text-align: center;
+    font-weight: lighter;
+    padding: 30px;
+    margin: 0px;
+}
+
+.menu {
+    margin: 0px;
+}
+  
+    .botones {
+        text-decoration: none;
+        float: left;
+        margin-top: 0;
+        margin-right: 10px;
+        padding: 15px 12px;
+        color: black;
+    }
+  
+    .botones:hover {
+        background-color: #2a2f48;;
+        color: white;
+    }
+
+.imagen_central {
+    margin-top: 49px;
+    text-align: center;
+    background-image: url(entrar-bg.png);
+    width: auto;
+    height: 165px;
+  }
+
+p {
+    color: white;
+}
+
+    .texto1 {
+        padding-top: 30px;
+        margin-bottom: 0;
+    }
+
+    .texto2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+strong {
+    font-size: 20px;
+    padding: 0px 5px;
+}
+
+    .texto3 {
+        font-size: 12px;
+    }
+
+    .boton_suerte {
+        text-decoration: none;
+        padding: 8px;
+        font-size: 12px;
+        color: #ffffff;
+        background-color: #E00000;
+        border-radius: 6px;
+        border: 2px solid #E00000;
+    }
+
+    .boton_suerte:hover {
+        border: 2px solid white;
+    }
+
+    .boton_suerte:active {
+        border: 2px solid white;
+        background-color: white;
+        color: #E00000;
+    }
+
+.articulo{
+    margin: 0 0 50px 50px;
+}
+
+h4{
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+    .parrafo{
+        font-size: 12px;
+    }
+
+    .articulo img,
+    .articulo p{
+        vertical-align: middle;
+    }
+
+    .columna_imagenes {
+        float: right;
+        padding-right: 30px;
+    }
+
+    .lateral {
+        width: 80px;
+        height: 80px;
+    }
+
+    .barra_inferior{
+        text-align: center;
+        background-color: #2a2f48;
+        color: white;
+        margin: 0;
+        width: 100%;
+        padding-left: 0;
+        display: inline-block;
+    }
+
+    .apartado {
+        display: inline-block;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        padding-right: 10%;
+    }
+
+    .numeros {
+        font-size: 40px;
+    }
+
+    .texto_abajo {
+        font-size: 13px;
+    }
+
+footer{
+    font-family: Arial, Helvetica;
+    font-size: 13px;
+    color: white;
+    background-color: #354174;
+    padding: 1px 10px;
+}
